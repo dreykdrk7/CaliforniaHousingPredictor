@@ -1,0 +1,21 @@
+data:
+  test_size: 0.2
+  random_state: 42
+
+training:
+  epochs: 50
+  batch_size: 32
+  validation_split: 0.2
+
+model:
+  layers: [64, 32]
+  activation: relu
+  optimizer: adam
+  loss: mse
+  metrics: [mae]
+
+output:
+  model_dir: saved_models/
+  logs_dir: logs/
+  predictions_dir: predictions/
+  report_file: predictions/report.html
