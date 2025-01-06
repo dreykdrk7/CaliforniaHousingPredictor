@@ -12,7 +12,6 @@ logs/
 *.log
 
 # Excluir modelos guardados y archivos antiguos
-saved_models/
 old/
 
 # Excluir predicciones y reportes
