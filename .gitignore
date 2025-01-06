@@ -1,2 +1,27 @@
+# Excluir archivos generados por Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Excluir entornos virtuales
+venv/
+.env/
+
+# Excluir logs
+logs/
+*.log
+
+# Excluir modelos guardados y archivos antiguos
+saved_models/
 old/
-logs/*
+
+# Excluir predicciones y reportes
+predictions/
+
+# Excluir configuraciones de IDEs
+.vscode/
+.idea/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
