@@ -3,16 +3,16 @@ data:
   random_state: 42
 
 training:
-  epochs: 50
-  batch_size: 32
+  epochs: 1000
+  batch_size: 64
   validation_split: 0.2
-  fine_tuning_epochs: 10
+  fine_tuning_epochs: 50
 
 model:
-  layers: [64, 32]
+  layers: [512, 256, 128, 64, 32]
   activation: relu
-  optimizer: adam
-  loss: mse
+  optimizer: rmsprop
+  loss: huber
   metrics: [mae]
 
 output:
@@ -20,3 +20,13 @@ output:
   logs_dir: logs/
   predictions_dir: predictions/
   report_file: predictions/report.html
+
+callbacks:
+  early_stopping:
+    monitor: val_loss
+    patience: 15
+    restore_best_weights: true
+  reduce_lr:
+    monitor: val_loss
+    factor: 0.5
+    patience: 10
